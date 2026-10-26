@@ -1,10 +1,10 @@
-# Senior check-in — conversation design concept and offline prototype
+# Conversational Check-In — Dialogue Design & Testing
 
-**Scope:** Self-contained, hypothetical **text** conversation demo to illustrate prompt constraints, turn handling and tests. **Not an integrated voice agent**, not a clinical tool, and not associated with Sensi.AI.
+**Focus:** Multi-turn conversation design, tone, context handling, response rules, and repeatable Python testing.
 
 ## The design problem
 
-A check-in assistant for an older adult should be short, clear and dignified while maintaining context. Two particularly dangerous conversational failures are **false reassurance** (sounding clinically certain without evidence) and **false action claims** (saying a caregiver was alerted when nothing was sent).
+A check-in conversation should be short, clear and respectful while maintaining context. Two particularly dangerous conversational failures are **false reassurance** (sounding clinically certain without evidence) and **false action claims** (saying a caregiver was alerted when nothing was sent).
 
 ## Interaction contract
 
@@ -30,7 +30,7 @@ Greeting → Listen → Classify urgency
 
 ## Design vs implementation
 
-The **system prompt** is a proposed spec for an LLM-powered future implementation; it is **not attached to a production API here**. The Python prototype is an intentionally bounded state machine, using a small set of patterns and in-session context. It demonstrates a testable flow and failure contracts **without pretending to be a real model or voice implementation**.
+The **system prompt** is a proposed spec for an LLM-powered future implementation; it is **not attached to a production API here**. The Python prototype is an intentionally bounded state machine, using a small set of patterns and in-session context. It demonstrates a testable flow and failure contracts in a reproducible, lightweight environment.
 
 ## Try the runnable demo
 
@@ -44,7 +44,7 @@ Runs locally using the Python standard library; no key, mic, API, install, or pr
 
 ## Example evaluation strategy
 
-Use the synthetic scenarios to spot hallucinated abilities, repetitive questions, missed escalation signals, mismatched tone, and failures to carry context forward. The [checks](evals/scenarios.json) provide lightweight expected/forbidden phrase assertions and are **not a benchmark of any actual LLM**. A production design would add consent-aware memory, real speech-recognition/error-repair testing, approved clinical escalation policy, integrations with verified success/failure feedback, human review, and privacy/compliance controls.
+Use the synthetic scenarios to spot hallucinated abilities, repetitive questions, missed escalation signals, mismatched tone, and failures to carry context forward. The [checks](evals/scenarios.json) provide lightweight expected/forbidden phrase assertions and are lightweight behavior checks for the prototype. A production design would add consent-aware memory, real speech-recognition/error-repair testing, approved clinical escalation policy, integrations with verified success/failure feedback, human review, and privacy/compliance controls.
 
 ## Iteration note
 
