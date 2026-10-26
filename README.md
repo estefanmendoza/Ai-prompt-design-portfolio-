@@ -1,51 +1,30 @@
-# Conversational Check-In — Dialogue Design & Testing
+# Estefan Mendoza
 
-**Focus:** Multi-turn conversation design, tone, context handling, response rules, and repeatable Python testing.
+**Business Development · AI Product Development · Prompt Engineering · Conversational UX**
 
-## The design problem
+Austin, TX · [LinkedIn](https://www.linkedin.com/in/estefan-mendoza/) · [SANCTVM](https://sanctvm.base44.app)
 
-A check-in conversation should be short, clear and respectful while maintaining context. Two particularly dangerous conversational failures are **false reassurance** (sounding clinically certain without evidence) and **false action claims** (saying a caregiver was alerted when nothing was sent).
+I combine a strong track record in revenue generation and full-cycle sales with hands-on AI-assisted product development. I design applications and workflows around real business needs, then refine them through structured prompts, practical testing, and iterative improvement.
 
-## Interaction contract
+## Selected projects
 
-1. **Tone:** Respectful, adult-to-adult, plain language; no infantilizing language or forced cheer.
-2. **Context:** Use only details provided in the current conversation. Do not invent prior memory, diagnoses or caregiver preferences.
-3. **One thing at a time:** Ask at most one focused question per turn, unless immediate danger requires a clear next step.
-4. **Urgency:** When there may be immediate danger, prioritize emergency guidance over ordinary check-in.
-5. **Action honesty:** The demo **cannot call, message, dispatch or schedule** anyone. It must say so clearly rather than implying an action was completed.
-6. **Privacy:** Do not assume consent to sharing. This local offline script does not transmit data externally.
+| Project | Focus |
+| --- | --- |
+| **[ESTEFAN OS — CRM](04-crm/README.md)** | Lead management, segmentation, campaign workflows, and sales operations UX |
+| **[SANCTVM — Ecommerce](01-sanctvm/README.md)** | Brand development, AI-assisted storefront design, and prompt iteration |
+| **[Conversational Interface Prototype](02-conversation-design/README.md)** | Dialogue design, context tracking, Python prototype, and automated scenario tests |
+| **[Local LLM & Agent Experiments](03-local-llm/README.md)** | Ollama, Qwen3, and exploratory agent workflows |
 
-See [system-prompt.md](prompts/system-prompt.md), [synthetic-transcripts.md](synthetic-transcripts.md), and the rubric in [evaluation-rubric.md](evaluation-rubric.md).
+## My approach
 
-## Flow sketch
+**Understand the goal → Define the requirements → Build → Test → Refine.**
 
-```text
-Greeting → Listen → Classify urgency
-                 ├── Immediate danger → Emergency guidance + honest limitation
-                 ├── Need for clarification → One follow-up question
-                 ├── Request to notify someone → Explain no messaging integration; offer drafting
-                 ├── Medication/clinical question → No diagnosis/dosing; refer to clinician/pharmacist
-                 └── Wants to stop → Respect choice and close
-```
+I translate business challenges into clear specifications, evaluate outputs in real interfaces, and iterate based on what actually works. My experience in business development, independent sales operations, and customer acquisition informs how I approach product decisions.
 
-## Design vs implementation
+## Published author
 
-The **system prompt** is a proposed spec for an LLM-powered future implementation; it is **not attached to a production API here**. The Python prototype is an intentionally bounded state machine, using a small set of patterns and in-session context. It demonstrates a testable flow and failure contracts in a reproducible, lightweight environment.
+*A New Way to Think About AI* — a book exploring practical ways to move from AI-generated information to creative problem-solving and execution. Available on Amazon and Barnes & Noble.
 
-## Try the runnable demo
+## Areas of focus
 
-```bash
-python3 run_demo.py
-python3 -m unittest discover -s tests -v
-python3 run_evals.py
-```
-
-Runs locally using the Python standard library; no key, mic, API, install, or private data needed.
-
-## Example evaluation strategy
-
-Use the synthetic scenarios to spot hallucinated abilities, repetitive questions, missed escalation signals, mismatched tone, and failures to carry context forward. The [checks](evals/scenarios.json) provide lightweight expected/forbidden phrase assertions and are lightweight behavior checks for the prototype. A production design would add consent-aware memory, real speech-recognition/error-repair testing, approved clinical escalation policy, integrations with verified success/failure feedback, human review, and privacy/compliance controls.
-
-## Iteration note
-
-A plausible initial prompt such as "Be warm, helpful and make sure a loved one knows about concerns" is unsafe because it leaves "helpful" undefined and encourages ungrounded claims that a notification was sent. The revised design explicitly requires tool confirmation before claiming any action. This is a **hypothetical design critique**, not a claim that live failures were observed.
+Revenue growth · B2B sales · AI-assisted product development · Prompt engineering · Conversational design · CRM workflows · Product strategy

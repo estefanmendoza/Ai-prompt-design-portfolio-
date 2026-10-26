@@ -1,42 +1,30 @@
-# SANCTVM — translating a brand vision into better AI prompts
+# SANCTVM — AI-Assisted Ecommerce Development
 
-**Type:** Real AI-assisted ecommerce website project · **Tools:** Base44 and general-purpose AI assistants · **Status:** Prototype/ongoing work
+**Role:** Founder, creative direction, product and workflow design  
+**Tools:** Base44, AI-assisted development and design tools  
+**[Explore the live storefront](https://sanctvm.base44.app)**
 
-## Challenge
+## Overview
 
-I wanted a fashion-led shopping experience that felt distinctive, intentional and credible—not another generic storefront. A broad first instruction produced an actual website, but the result didn't deliver the premium visual identity or the full customer experience I was asking for.
+SANCTVM is an independent fashion brand developed from concept to a branded ecommerce experience. I defined the brand identity, visual direction, product presentation, and customer journey, then used AI-assisted development to build and refine the storefront.
 
-## What was broken in the first version?
+## Prompt design and iteration
 
-The first result was functional enough to view, but its visual direction felt generic: insufficiently specific hierarchy, composition, product presentation and brand voice. Broad requests left too many decisions to the generator. Subsequent changes could also produce a new inconsistency somewhere else in the site, making each iteration a tradeoff between speed, credits and careful review.
+Early broad instructions generated a starting interface but left important decisions around layout, hierarchy, product presentation, and navigation unspecified. I improved outcomes by replacing vague design requests with detailed specifications and reviewing the actual rendered experience after each iteration.
 
-## How I found out
+**Example of a refined project specification:**
 
-I inspected the rendered/live site rather than trusting the AI's summary of the work. I compared what was visible and interactive with the actual direction I wanted. Separately, a platform security scan identified more serious issues in generated backend/API logic. For example, an order-creation flow accepted a price supplied by the client. That is not a cosmetic problem: pricing must be verified on the server. This finding is documented here as a discovery, **not a claim that I personally implemented and verified the production fix**.
+> Create a restrained, editorial ecommerce experience with a dark visual identity, strong typography, focused product presentation, and minimal navigation. Define expected behavior for product selection, cart state, mobile layout, and checkout flow. Review each page after implementing changes and report what remains unverified.
 
-## Example of the prompt revision
+This example illustrates the design approach rather than reproducing an archived prompt verbatim.
 
-The exact original messages are not preserved here; these are **illustrative reconstructions** showing the difference in specificity.
+## Skills demonstrated
 
-**V1 — broad request**
+- AI-assisted application development and prompt iteration
+- Creative direction, brand identity, and ecommerce UX
+- Requirements gathering, visual evaluation, and debugging
+- Translating business and design objectives into actionable instructions
 
-> Build an ecommerce website for my clothing brand SANCTVM with product pages, a cart, and checkout.
+## Ongoing work
 
-**V2 — measurable creative + functional specification**
-
-> Design SANCTVM as a restrained, dark, editorial ecommerce experience. Use a deliberately sparse navigation, strong type hierarchy and a product-first layout. Avoid default template sections, generic lifestyle stock imagery, and unrequested promotional clutter. Define distinct states for an empty cart, product selection, mobile browsing and checkout. After each change, report exactly which screens and flows changed, what was not implemented, and what needs manual verification. Never treat a visually correct checkout screen as proof of payment security; server-side pricing and authentication require explicit checks.
-
-## Why the second approach is better
-
-- It replaces taste words alone ("premium") with **observable design constraints**.
-- It requires **screen/state coverage**, not just an attractive landing page.
-- It asks for **change notes and unresolved items**, reducing false confidence.
-- It separates **visual success** from verified **backend safety**.
-
-## Review checklist
-
-See [review-checklist.md](review-checklist.md) for the criteria I would apply to future iterations, including product flow and security handoff. These are recommended acceptance criteria, not a claim that every criterion has passed.
-
-## Lessons
-
-A useful prompt should help reveal what was *not* done. I learned to request fewer vague upgrades and more targeted, testable changes. Human observation remains essential: the model's description of a result is not the same as the actual product.
+The storefront continues to evolve. My focus is improving product consistency, customer experience, and integration reliability as development progresses.
